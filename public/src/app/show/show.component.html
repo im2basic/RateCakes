@@ -1,0 +1,10 @@
+<h2>Baked By: {{ cakeToShow.Baker }}</h2>
+<img src="{{ cakeToShow.imgUrl }}" alt="cake">
+<div id="ratings">
+  <p>Average Rating: {{ avgRating }}</p>
+  <div *ngFor="let rating of cakeToShow.ratings">
+    <p>Stars: {{ rating.rating }}</p>
+    <p>Comment: {{ rating.comment }}</p>
+
+</div>
+</div>

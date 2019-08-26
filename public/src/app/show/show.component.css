@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+img{
+    width: 30%;
+    display: inline-block;
+}
+#ratings{
+    display: inline-block;
+    width: 70%;
+}

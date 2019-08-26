@@ -1,0 +1,7 @@
+<form (submit)="createRating()">
+    <label >Stars: </label>
+    <input type="number" min="1" max="5" name="newRating.rating" [(ngModel)]="newRating.rating"><br>
+    <label >Comment: </label>
+    <input type="text" name="newRating.comment" [(ngModel)]="newRating.comment">
+    <input type="submit" value="Submit Rating">
+  </form>

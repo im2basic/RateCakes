@@ -1,0 +1,38 @@
+<!-- Where we code our 1 page html for the front end-->
+
+
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<div *ngFor="let err of cakeErrors">
+  <p style="color: red;">{{ err }}</p>
+</div>
+
+<div class="box">
+  <form (submit)="createCake()">
+    <label>Baker Name:</label><br>
+    <input type="text" name="newCake.baker" [(ngModel)]="newCake.baker"><br>
+    <label>Image Url:</label><br>
+    <input type="text" name="newCake.imgUrl" [(ngModel)]="newCake.imgUrl"><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<div class="box">
+  <div *ngFor="let cake of allCakes">
+    <p>{{cake.baker}}</p>
+    <img (click)="getOne(cake._id)" src={{cake.imgUrl}} alt="cake">
+    <app-new-rating [cakeId]="cake._id"></app-new-rating>
+  </div>
+</div>
+
+<div *ngIf="selectedCake">
+  <button (click)="closeShow()">Close</button>
+  <app-show [cakeToShow]="selectedCake"></app-show>
+</div>
+
+
+<!-- -- DO NOT DELETE, NEEDED -- -->
+<router-outlet></router-outlet>
